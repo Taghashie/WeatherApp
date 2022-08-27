@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="src/Styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -13,32 +13,47 @@
 
 <body>
     <div class="container">
-        <h1>Yaounde</h1>
-        <ul>
-            <li>Time</li>
-            <li>Date</li>
-            <li>Clear</li>
-        </ul>
-        <div class="row">
-            <div class="col-6">
-                <img src="https://weather.com/en-NG/weather/hourbyhour/l/b8543529c433dce3265b04f5b9bbfd9776b4e4b61402261ae46ec2766ec23db9"
-                    alt="Cloudy">
-                20 °C | °F
+        <div class="weather-app-wrapper">
+            <div class="weather-app">
+                <div class="my-city">
+                    <h1>Yaounde</h1>
+                    <ul>
+                        <li>Time</li>
+                        <li>Date</li>
+                        <li>Clear</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="contain">    
+                            <div class="image">
+                                <img 
+                                        src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                                        alt="Cloudy" class="float-left"
+                                       />
+                            </div>
+                            <div class="text">
+                            20 
+                            <div class="units">°C | °F</div>
+                            </div>
+                        </div>
+                                   
+                    </div>           
+                    <div class="col-6">
+                    <ul>
+                        <li>Precipation</li>
+                        <li>humidity</li>
+                        <li>WindSpeed</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <ul>
-                <li>Precipation</li>
-                <li>humidity</li>
-                <li>WindSpeed</li>
-            </ul>
-        </div>
-        <footer>
-            <small>
-                Open-source code by Tagha E. Shie
-            </small>
-        </footer>
     </div>
+    <footer>
+        <small>
+            Open-source code by Tagha E. Shie
+        </small>
+    </footer>
     <script src="src/Index.js"></script>
 </body>
 
