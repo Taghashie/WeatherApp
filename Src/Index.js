@@ -30,6 +30,7 @@ function displayTemperature(response) {
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon")
     let weatherCondition = document.querySelector("#weather-cond");
+    CelTemp = response.data.main.temp;
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     weatherCondition.innerHTML = response.data.weather[0].description;
@@ -53,7 +54,32 @@ function handleSubmit(event) {
     search(cityInputElement.value);
 }
 
+function displayFahrenheitTemperature(event) {
+    event.preventDefault();
+    let fahTemp = (CelTemp * 9) / 5 + 32;
+    let temperatureElement = document.querySelector("#temp");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+
+    temperatureElement.innerHTML = Math.round(fahTemp);
+}
+function displayCelsiusTemperature(event) {
+    event.preventDefault();
+     celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    let temperatureElement = document.querySelector("#temp");
+    temperatureElement.innerHTML = Math.round(CelTemp);
+}
+let CelTemp = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Yaounde");
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Bamenda");
