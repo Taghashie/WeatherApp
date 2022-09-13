@@ -22,6 +22,41 @@ function formatDate(timestamp) {
 }
 
 
+function displayForecast(response) {
+    console.log(response.data.daily);
+    let forecastElement=document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    let days = ["Thur", "Fri", "Sat", "Sun","Mon"];
+    days.forEach(function (day) {
+   forecastHTML= forecastHTML +
+   `
+            <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img src="http://openweathermap.org/img/wn/50d@2x.png"
+                alt=""
+                width="42"
+                />
+                <div class="weather-forecast-temp">
+                    <span class="weather-forecast-temp-max">18</span>
+                    <span class="weather-forecast-temp-min">15</span>
+                </div>
+            </div>
+    `;       
+    })
+  
+   forecastHTML=forecastHTML+ `</div>`;
+   forecastElement.innerHTML=forecastHTML;
+}
+
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = "1198758847d63b62f48537f6840537aa";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+
+
+}
+
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temp");
     let cityElement = document.querySelector("#city");
@@ -39,6 +74,8 @@ function displayTemperature(response) {
     iconElement.setAttribute("alt", response.data.weather[0].description);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     windElement.innerHTML = Math.round(response.data.wind.speed);
+
+    getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -83,3 +120,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Bamenda");
+displayForecast();

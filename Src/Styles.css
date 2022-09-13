@@ -87,7 +87,7 @@ img {
 }
 .weather-forecast{
     margin-top: 30px;
-    text-align: center;
+    text-align: left;
     color: black;
 }
 .weather-forecast-date{

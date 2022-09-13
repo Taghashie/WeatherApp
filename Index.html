@@ -30,7 +30,7 @@
                     <div class="my-city">
                     <h1 id="city"></h1>
                     <ul>
-                        <li>Last updated on <span id="date"></span></li>
+                        <li>Last updated: <span id="date"></span></li>
                         <li id="weather-cond">Clear</li>
                     </ul>
                 </div>
@@ -39,7 +39,7 @@
                         <div class="contain">    
                             <div class="image">
                                 <img 
-                                        src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                                        src="http://openweathermap.org/img/wn/50d@2x.png" 
                                         alt="Cloudy" id="icon" class="float-left"
                                        />
                             </div>
@@ -57,24 +57,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="weather-forecast">
-                <div class="row">
-                    <div class="col-2">
-                        <div class="weather-forecast-date">Thur</div>
-                        <img 
-                            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" 
-                        alt=""
-                        width="40"
-                        />
-                        <div class="weather-forecaste-temp">
-                            <span class="weather-forecast-max-temp">
-                            12</span> 
-                            <span class="weather-forecast-min-temp">10</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <div class="weather-forecast" id="forecast"></div>
         </div>
     </div>
     <footer class="footer">
