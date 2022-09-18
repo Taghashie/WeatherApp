@@ -7,6 +7,7 @@ body{
     border: 1px solid #dadde1;
     border-radius: 5px;   
     margin-bottom: 0; 
+    background-image: -webkit-linear-gradient(skyblue, white);
 }
 h1{
     color:#878787;
@@ -37,7 +38,7 @@ li::first-letter{
 .my-city{
     margin-bottom: 40px;
 }
-.weather-icon img{
+.icon{
     margin-right: 10px;
     height: 70px;
     width: 70px;
@@ -97,9 +98,9 @@ img {
 .weather-forecaste-temp{
 font-size: 14px;
 }
-.weather-forecast-max-temp{
+.weather-forecast-temp-max{
 
 }
-.weather-forecast-min-temp{
+.weather-forecast-temp-min{
 opacity: 0.5;
 }
