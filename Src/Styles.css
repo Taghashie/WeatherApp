@@ -81,6 +81,10 @@ img {
 .active{
     color:black;
     cursor: default;
+    text-decoration: none;
+}
+.inactive {
+    text-decoration: none
 }
 .active:hover {
     text-decoration: none;
